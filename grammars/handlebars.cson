@@ -39,10 +39,80 @@ patterns: [
 ]
 repository:
   handlebar_block_slots:
-    match: "(\\{\\{\\#block\\-slot)"
-    captures:
+    begin: "(\\{\\{\\#)(block\\-slot)(.*?)(\\}\\})"
+    beginCaptures:
       "1":
-        name: "block.slots"
+        name: "keyword.other.handlebar.atom-background-color"
+      "2":
+        name: "keyword.atom-background-color"
+      "3":
+        patterns: [
+          {
+            include: "#string_single_quoted"
+          }
+          {
+            include: "#string_double_quoted"
+          }
+          {
+            include: "#handlebar_as"
+          }
+          {
+            include: "#tag_onClick"
+          }
+          {
+            include: "#handlebar_attributes"
+          }
+          {
+            include: "#handlebar_data"
+          }
+          {
+            include: "#handlebar_action_helper"
+          }
+          {
+            include: "#handlebar_helper"
+          }
+        ]
+        name: "atom-background-color"
+      "4":
+        name: "keyword.other.handlebar.atom-background-color"
+    end: "(\\{\\{\\/)(block\-slot)(\\}\\})"
+    endCaptures:
+      "1":
+        name: "keyword.other.handlebar.atom-background-color"
+      "2":
+        name: "keyword.atom-background-color"
+      "3":
+        name: "keyword.other.handlebar.atom-background-color"
+    name: "block.slots"
+    patterns: [
+      {
+        include: "#component_action"
+      }
+      {
+        include: "#component"
+      }
+      {
+        include: "#escaping_handlebars"
+      }
+      {
+        include: "#comments"
+      }
+      {
+        include: "#each_block"
+      }
+      {
+        include: "#block_helper"
+      }
+      {
+        include: "#end_block"
+      }
+      {
+        include: "#partial_and_var"
+      }
+      {
+        include: "#html_tags"
+      }
+    ]
   escaping_handlebars:
     begin: "(\\{\\{\\{)([-a-zA-Z_\\./]+)"
     beginCaptures:
