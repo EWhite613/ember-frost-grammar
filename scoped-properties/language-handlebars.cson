@@ -1,3 +1,4 @@
+# Credit: better-handlebars
 '.text.html.handlebars':
   'editor':
     'commentStart': '{{!-- '

@@ -1,10 +1,11 @@
 {
-  "name": "ember-frost-grammar",
+  "name": "atom-ember-frost-handlebars-language",
   "version": "0.0.0",
-  "description": "Grammar for Frost",
+  "description": "Handlebars Grammar for Ember Frost",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
+  "repository": "https://github.com/ciena-blueplanet/atom-ember-frost-handlebars-language",
   "dependencies": {}
 }
